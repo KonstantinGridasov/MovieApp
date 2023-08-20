@@ -13,4 +13,6 @@ dependencyResolutionManagement {
     }
 }
 rootProject.name = "CinemaApp"
-include ':app'
+include ':presentation'
+include ':data'
+include ':domain'

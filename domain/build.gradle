@@ -1,0 +1,23 @@
+plugins {
+    id 'java-library'
+    id 'org.jetbrains.kotlin.jvm'
+    id 'kotlin-kapt'
+
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_11
+    targetCompatibility = JavaVersion.VERSION_11
+}
+
+
+dependencies {
+    var coroutines = "1.6.4"
+    var  dagger = "2.40.2"
+
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutines"
+
+    implementation "com.google.dagger:dagger:$dagger"
+    kapt "com.google.dagger:dagger-compiler:$dagger"
+
+}
