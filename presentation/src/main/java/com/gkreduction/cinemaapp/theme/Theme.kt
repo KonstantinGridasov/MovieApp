@@ -1,4 +1,4 @@
-package com.gkreduction.cinemaapp.ui.theme
+package com.gkreduction.cinemaapp.theme
 
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material.MaterialTheme

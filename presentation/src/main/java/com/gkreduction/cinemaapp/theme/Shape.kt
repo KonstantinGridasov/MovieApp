@@ -1,4 +1,4 @@
-package com.gkreduction.cinemaapp.ui.theme
+package com.gkreduction.cinemaapp.theme
 
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Shapes

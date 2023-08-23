@@ -2,6 +2,8 @@ plugins {
     id 'com.android.library'
     id 'org.jetbrains.kotlin.android'
     id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
+
 }
 
 android {
@@ -23,11 +25,11 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_11
-        targetCompatibility JavaVersion.VERSION_11
+        sourceCompatibility JavaVersion.VERSION_18
+        targetCompatibility JavaVersion.VERSION_18
     }
     kotlinOptions {
-        jvmTarget = '11'
+        jvmTarget = '18'
     }
 }
 
@@ -36,7 +38,7 @@ dependencies {
     var retrofitVersion = '2.3.+'
     var okHttpVersion = '3.9.+'
     var coroutines = "1.6.4"
-    var hilt = "2.43.2"
+    var hilt_version = "2.47"
 
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation project(':domain')
@@ -51,8 +53,8 @@ dependencies {
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutines"
 
     //DI
-    implementation "com.google.dagger:hilt-android:$hilt"
-    kapt "com.google.dagger:hilt-compiler:$hilt"
+    implementation "com.google.dagger:hilt-android:$hilt_version"
+    kapt "com.google.dagger:hilt-android-compiler:$hilt_version"
 
 
 }

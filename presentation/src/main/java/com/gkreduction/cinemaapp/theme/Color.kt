@@ -1,4 +1,4 @@
-package com.gkreduction.cinemaapp.ui.theme
+package com.gkreduction.cinemaapp.theme
 
 import androidx.compose.ui.graphics.Color
 
