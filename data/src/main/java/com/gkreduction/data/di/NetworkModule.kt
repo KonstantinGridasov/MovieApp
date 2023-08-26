@@ -16,10 +16,9 @@ import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import java.lang.reflect.Modifier
 import java.util.concurrent.TimeUnit
 import javax.inject.Singleton
-import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
+
 @Module
 @InstallIn(SingletonComponent::class)
 object NetworkModule {
@@ -33,7 +32,6 @@ object NetworkModule {
         return Retrofit.Builder()
             .baseUrl(BASE_URL)
             .addConverterFactory(gsonConverterFactory)
-            .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
             .client(okHttpClient)
             .build()
     }
@@ -69,15 +67,14 @@ object NetworkModule {
         val gsonBuilder = GsonBuilder()
         return gsonBuilder
             .setFieldNamingPolicy(FieldNamingPolicy.LOWER_CASE_WITH_UNDERSCORES)
-            .excludeFieldsWithoutExposeAnnotation()
-//            .excludeFieldsWithModifiers(Modifier.FINAL, Modifier.TRANSIENT, Modifier.STATIC)
             .create()
 
     }
 
     @Provides
     @Singleton
-    fun providesGsonConverterFactory(gson: Gson): GsonConverterFactory = GsonConverterFactory.create(gson)
+    fun providesGsonConverterFactory(gson: Gson): GsonConverterFactory =
+        GsonConverterFactory.create(gson)
 
     @Provides
     @Singleton

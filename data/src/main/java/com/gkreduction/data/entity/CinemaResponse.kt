@@ -1,38 +1,16 @@
 package com.gkreduction.data.entity
 
-import com.google.gson.annotations.Expose
-import com.google.gson.annotations.SerializedName
+import kotlinx.serialization.SerialName
+import kotlinx.serialization.Serializable
 
-class CinemaResponse(
-    @Expose
-    @SerializedName("name")
-    val name: String,
-
-    @Expose
-    @SerializedName("genres")
-    val genres: ArrayList<String>,
-
-    @Expose
-    @SerializedName("year")
-    val year: Int,
-
-    @Expose
-    @SerializedName("country")
-    val country: String,
-
-    @Expose
-    @SerializedName("director")
-    val director: String,
-
-    @Expose
-    @SerializedName("actors")
-    val actors: ArrayList<String>,
-
-    @Expose
-    @SerializedName("image_url")
-    val imageUrl: String,
-
-    @Expose
-    @SerializedName("description")
-    val description: String,
+@Serializable
+data class CinemaResponse(
+    @SerialName("name") val name: String?,
+    @SerialName("genres") val genres: ArrayList<String>?,
+    @SerialName("year") val year: Int?,
+    @SerialName("country") val country: String?,
+    @SerialName("director") val director: String?,
+    @SerialName("actors") val actors: ArrayList<String>?,
+    @SerialName("image_url") val imageUrl: String?,
+    @SerialName("description") val description: String?,
 )

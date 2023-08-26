@@ -13,14 +13,14 @@ fun mapListCinema(list: List<CinemaResponse>): List<Cinema> {
 }
 
 fun CinemaResponse.toCoreModel(): Cinema = Cinema(
-    name = this.name,
-    genres = this.genres,
-    year = this.year,
-    country = this.country,
-    director = this.director,
-    actors = this.actors,
-    imageUrl = this.imageUrl,
-    description = this.description
+    name = this.name ?: "",
+    genres = this.genres ?: emptyList(),
+    year = this.year ?: 0,
+    country = this.country ?: "",
+    director = this.director ?: "",
+    actors = this.actors ?: emptyList(),
+    imageUrl = this.imageUrl ?: "",
+    description = this.description ?: ""
 )
 
 
