@@ -12,5 +12,16 @@ fun mapListCinema(list: List<CinemaResponse>): List<Cinema> {
     return result
 }
 
-fun CinemaResponse.toCoreModel(): Cinema = Cinema(this.name)
+fun CinemaResponse.toCoreModel(): Cinema = Cinema(
+    name = this.name,
+    genres = this.genres,
+    year = this.year,
+    country = this.country,
+    director = this.director,
+    actors = this.actors,
+    imageUrl = this.imageUrl,
+    description = this.description
+)
+
+
 

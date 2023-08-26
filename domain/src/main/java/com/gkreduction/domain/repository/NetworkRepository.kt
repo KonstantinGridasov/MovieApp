@@ -1,7 +1,9 @@
 package com.gkreduction.domain.repository
+
 import com.gkreduction.domain.entity.Cinema
-import com.gkreduction.domain.entity.ResultData
+import io.reactivex.Observable
+import io.reactivex.Single
 
 interface NetworkRepository {
-    suspend fun fetchCinemaList(): ResultData<List<Cinema>>
+    fun fetchCinemaList(): Single<List<Cinema>>
 }
