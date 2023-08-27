@@ -1,61 +1,20 @@
-package com.gkreduction.cinemaapp.ui
+package com.gkreduction.movieapp.ui
 
-import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.lazy.LazyItemScope
-import androidx.compose.foundation.lazy.LazyListScope
-import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.*
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.livedata.observeAsState
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.layout.ContentScale
-import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.LiveData
 import com.bumptech.glide.integration.compose.ExperimentalGlideComposeApi
 import com.bumptech.glide.integration.compose.GlideImage
-import com.gkreduction.cinemaapp.R
-import com.gkreduction.cinemaapp.theme.CinemaAppTheme
+import com.gkreduction.movieapp.utils.items
 import com.gkreduction.domain.entity.Movie
-
-@Composable
-@Preview
-fun mainScreen() {
-    CinemaAppTheme {
-        Surface(
-            modifier = Modifier.fillMaxSize(),
-            color = MaterialTheme.colors.background
-        ) {
-            Column(
-                modifier = Modifier.fillMaxSize(),
-                verticalArrangement = Arrangement.Top,
-                horizontalAlignment = Alignment.CenterHorizontally
-            ) {
-                Image(
-                    painter = painterResource(id = R.drawable.lockscreen),
-                    contentDescription = "App",
-                    modifier = Modifier
-                        .size(400.dp)
-                        .clip(CircleShape)
-                )
-                Text(text = "Hello Android!")
-                Button(
-                    onClick = { },
-                    content = {
-
-                    })
-            }
-        }
-    }
-
-}
 
 @Composable
 fun MoviesScreen(state: LiveData<MainScreenViewState>) {
@@ -66,15 +25,6 @@ fun MoviesScreen(state: LiveData<MainScreenViewState>) {
         }
     }
 }
-
-inline fun <T> LazyListScope.items(
-    items: List<T>,
-    noinline key: ((item: T) -> Any)? = null,
-    crossinline itemContent: @Composable LazyItemScope.(item: T) -> Unit
-) = items(items.size, if (key != null) { index: Int -> key(items[index]) } else null) {
-    itemContent(items[it])
-}
-
 
 @Composable
 fun MoviesListScreen(movies: List<Movie>) {

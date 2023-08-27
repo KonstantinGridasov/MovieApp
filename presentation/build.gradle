@@ -8,11 +8,11 @@ plugins {
 }
 
 android {
-    namespace 'com.gkreduction.cinemaapp'
+    namespace 'com.gkreduction.movieapp'
     compileSdk 34
 
     defaultConfig {
-        applicationId "com.gkreduction.cinemaapp"
+        applicationId "com.gkreduction.movieapp"
         minSdk 26
         targetSdk 34
         versionCode 1

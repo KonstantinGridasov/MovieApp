@@ -1,4 +1,4 @@
-package com.gkreduction.cinemaapp.base
+package com.gkreduction.movieapp.base
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

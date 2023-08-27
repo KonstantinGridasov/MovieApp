@@ -1,8 +1,7 @@
-package com.gkreduction.cinemaapp.ui
+package com.gkreduction.movieapp.ui
 
 import androidx.lifecycle.viewModelScope
-import com.gkreduction.cinemaapp.base.BaseViewModel
-import com.gkreduction.domain.entity.Movie
+import com.gkreduction.movieapp.base.BaseViewModel
 import com.gkreduction.domain.usecase.cinema.GetListMoviesUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
@@ -15,12 +14,12 @@ class MainViewModel @Inject constructor(var getListCinemaUseCase: GetListMoviesU
     override fun getInitialState(): MainScreenViewState = MainScreenViewState()
 
     override fun processIntents(intent: MainScreenIntent) {
-//        when (intent) {
-//            MainScreenIntent.LoadCinemaData -> fetchMovies()
-//        }
+        when (intent) {
+            MainScreenIntent.LoadCinemaData -> fetchMovies()
+        }
     }
 
-     fun fetchMovies() {
+    private fun fetchMovies() {
         viewModelScope.launch {
             getListCinemaUseCase.execute().let {
                 updateState { state ->
@@ -30,17 +29,6 @@ class MainViewModel @Inject constructor(var getListCinemaUseCase: GetListMoviesU
         }
     }
 
-    private fun showItem(items: List<Movie>) {
-        items.forEach {
-            println(it.name)
-            println(it.country)
-        }
-
-    }
-
 }
 
 
-data class MainScreenViewState(
-    val items: List<Movie>? = null
-)
