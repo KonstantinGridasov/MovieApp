@@ -60,12 +60,20 @@ dependencies {
 
 
     // Design
+    implementation "com.github.bumptech.glide:compose:1.0.0-alpha.5"
+
+
+
+    // compose
     implementation 'androidx.activity:activity-compose:1.7.2'
     implementation "androidx.compose.ui:ui:$compose_ui_version"
+    implementation "androidx.compose.ui:ui-tooling:$compose_ui_version"
     implementation "androidx.compose.ui:ui-tooling-preview:$compose_ui_version"
+    implementation "androidx.compose.ui:ui-viewbinding:$compose_ui_version"
     implementation "androidx.compose.material:material:$compose_ui_version"
-    debugImplementation "androidx.compose.ui:ui-tooling:$compose_ui_version"
-    debugImplementation "androidx.compose.ui:ui-test-manifest:$compose_ui_version"
+    implementation "androidx.compose.material:material-ripple:$compose_ui_version"
+    implementation "androidx.activity:activity-compose:$compose_ui_version"
+    implementation "androidx.compose.runtime:runtime-livedata:$compose_ui_version"
 
 
     var rxKotlinVersion = "2.2.+"

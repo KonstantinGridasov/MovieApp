@@ -1,18 +1,18 @@
 package com.gkreduction.data.mapper
 
-import com.gkreduction.data.entity.CinemaResponse
-import com.gkreduction.domain.entity.Cinema
+import com.gkreduction.data.entity.MovieResponse
+import com.gkreduction.domain.entity.Movie
 
 
-fun mapListCinema(list: List<CinemaResponse>): List<Cinema> {
-    val result = ArrayList<Cinema>()
+fun mapListMovies(list: List<MovieResponse>): List<Movie> {
+    val result = ArrayList<Movie>()
     list.forEach {
         result.add(it.toCoreModel())
     }
     return result
 }
 
-fun CinemaResponse.toCoreModel(): Cinema = Cinema(
+fun MovieResponse.toCoreModel(): Movie = Movie(
     name = this.name ?: "",
     genres = this.genres ?: emptyList(),
     year = this.year ?: 0,

@@ -2,7 +2,7 @@ package com.gkreduction.data.di
 
 import com.gkreduction.data.BASE_URL
 import com.gkreduction.data.BuildConfig
-import com.gkreduction.data.repository.CinemaNetworkApi
+import com.gkreduction.data.repository.MovieNetworkApi
 import com.gkreduction.data.repository.NetworkRepositoryImpl
 import com.gkreduction.data.repository.datasource.NetworkDataSource
 import com.google.gson.FieldNamingPolicy
@@ -78,7 +78,7 @@ object NetworkModule {
 
     @Provides
     @Singleton
-    fun provideSettingsDataSource(api: CinemaNetworkApi) = NetworkDataSource(api)
+    fun provideSettingsDataSource(api: MovieNetworkApi) = NetworkDataSource(api)
 
     @Provides
     @Singleton
@@ -87,8 +87,8 @@ object NetworkModule {
 
     @Provides
     @Singleton
-    fun provideService(retrofit: Retrofit): CinemaNetworkApi {
-        return retrofit.create(CinemaNetworkApi::class.java)
+    fun provideService(retrofit: Retrofit): MovieNetworkApi {
+        return retrofit.create(MovieNetworkApi::class.java)
     }
 
 }

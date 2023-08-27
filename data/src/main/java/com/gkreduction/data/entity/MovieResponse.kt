@@ -4,7 +4,7 @@ import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
 @Serializable
-data class CinemaResponse(
+data class MovieResponse(
     @SerialName("name") val name: String?,
     @SerialName("genres") val genres: ArrayList<String>?,
     @SerialName("year") val year: Int?,

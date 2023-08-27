@@ -1,12 +1,12 @@
 package com.gkreduction.data.repository.datasource
 
-import com.gkreduction.data.entity.CinemaResponse
-import com.gkreduction.data.repository.CinemaNetworkApi
+import com.gkreduction.data.entity.MovieResponse
+import com.gkreduction.data.repository.MovieNetworkApi
 import javax.inject.Inject
 
-class NetworkDataSource @Inject constructor(private val cinemaNetworkApi: CinemaNetworkApi) {
+class NetworkDataSource @Inject constructor(private val movieNetworkApi: MovieNetworkApi) {
 
-    suspend fun fetchCinemaList(): List<CinemaResponse> {
-        return cinemaNetworkApi.getCinemaList()
+    suspend fun fetchCinemaList(): List<MovieResponse> {
+        return movieNetworkApi.getMovies()
     }
 }

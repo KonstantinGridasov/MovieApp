@@ -13,10 +13,9 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            mainScreen()
+            MoviesScreen(state = mainViewModel.state)
         }
-        mainViewModel.test()
-
+        mainViewModel.fetchMovies()
     }
 
 }

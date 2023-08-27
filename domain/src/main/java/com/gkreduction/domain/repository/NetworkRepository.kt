@@ -1,7 +1,7 @@
 package com.gkreduction.domain.repository
 
-import com.gkreduction.domain.entity.Cinema
+import com.gkreduction.domain.entity.Movie
 
 interface NetworkRepository {
-    suspend fun fetchCinemaList(): List<Cinema>
+    suspend fun getMovies(): List<Movie>
 }

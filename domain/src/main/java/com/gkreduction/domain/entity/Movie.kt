@@ -1,7 +1,7 @@
 package com.gkreduction.domain.entity
 
 
-data class Cinema(
+data class Movie(
     val name: String,
     val genres: List<String>,
     val year: Int,
